@@ -124,6 +124,7 @@
     <None Include="Pesistencia\BD_CERVEJA.edmx.diagram">
       <DependentUpon>BD_CERVEJA.edmx</DependentUpon>
     </None>
+    <None Include="Script\MD_CERVEJA_AGORA.bak" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
