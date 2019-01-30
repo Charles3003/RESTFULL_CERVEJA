@@ -1,0 +1,12 @@
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\MD_RESTFULL_NEGOCIO.dll.config
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\MD_RESTFULL_NEGOCIO.dll
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\MD_RESTFULL_NEGOCIO.pdb
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\EntityFramework.dll
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\EntityFramework.xml
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\obj\Release\MD_RESTFULL_NEGOCIO.csprojAssemblyReference.cache
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\obj\Release\MD_RESTFULL_NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\obj\Release\MD_RESTFULL_NEGOCIO.csproj.CopyComplete
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\obj\Release\MD_RESTFULL_NEGOCIO.dll
+C:\Users\Charles Marques\Documents\GitHub\RESTFULL_CERVEJA\MD_RESTFULL_NEGOCIO\obj\Release\MD_RESTFULL_NEGOCIO.pdb

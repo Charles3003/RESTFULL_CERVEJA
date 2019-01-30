@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="md_cervejaStoreContainer" CdmEntityContainer="MD_CERVEJA_AGORA">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="md_cerveja.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CAD_COMENTARIO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_CAD_COMENTARIO">
+        <MappingFragment StoreEntitySet="TB_CAD_COMENTARIO">
+          <ScalarProperty Name="CD_COMENTARIO" ColumnName="CD_COMENTARIO" />
+          <ScalarProperty Name="CD_COMENTARIO_PAI" ColumnName="CD_COMENTARIO_PAI" />
+          <ScalarProperty Name="CD_USUARIO" ColumnName="CD_USUARIO" />
+          <ScalarProperty Name="CD_PRODUTO" ColumnName="CD_PRODUTO" />
+          <ScalarProperty Name="CD_DISTRIBUIDORA" ColumnName="CD_DISTRIBUIDORA" />
+          <ScalarProperty Name="DS_COMENTARIO" ColumnName="DS_COMENTARIO" />
+          <ScalarProperty Name="DT_DATA_CRIACAO" ColumnName="DT_DATA_CRIACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CAD_DISTRIBUIDORA">
+      <EntityTypeMapping TypeName="md_cerveja.TB_CAD_DISTRIBUIDORA">
+        <MappingFragment StoreEntitySet="TB_CAD_DISTRIBUIDORA">
+          <ScalarProperty Name="CD_DISTRIBUIDORA" ColumnName="CD_DISTRIBUIDORA" />
+          <ScalarProperty Name="NM_RAZAO_SOCIAL" ColumnName="NM_RAZAO_SOCIAL" />
+          <ScalarProperty Name="NR_TELEFONE" ColumnName="NR_TELEFONE" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="DT_DATA_HORA_INICIO_ENTREGA" ColumnName="DT_DATA_HORA_INICIO_ENTREGA" />
+          <ScalarProperty Name="DT_DATA_HORA_FIM_ENTREGA" ColumnName="DT_DATA_HORA_FIM_ENTREGA" />
+          <ScalarProperty Name="DS_SAUDACAO" ColumnName="DS_SAUDACAO" />
+          <ScalarProperty Name="VL_VALOR_ENTREGA_PEDIDO" ColumnName="VL_VALOR_ENTREGA_PEDIDO" />
+          <ScalarProperty Name="IMG_LOGO_DISTRIBUIDORA" ColumnName="IMG_LOGO_DISTRIBUIDORA" />
+          <ScalarProperty Name="DS_SENHA" ColumnName="DS_SENHA" />
+          <ScalarProperty Name="FL_ATIVO" ColumnName="FL_ATIVO" />
+          <ScalarProperty Name="DS_EMAIL" ColumnName="DS_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CAD_PRODUTO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_CAD_PRODUTO">
+        <MappingFragment StoreEntitySet="TB_CAD_PRODUTO">
+          <ScalarProperty Name="CD_PRODUTO" ColumnName="CD_PRODUTO" />
+          <ScalarProperty Name="CD_DISTRIBUIDORA" ColumnName="CD_DISTRIBUIDORA" />
+          <ScalarProperty Name="CD_TIPO_PRODUTO" ColumnName="CD_TIPO_PRODUTO" />
+          <ScalarProperty Name="NM_PRODUTO" ColumnName="NM_PRODUTO" />
+          <ScalarProperty Name="VL_VALOR_PRODUTO" ColumnName="VL_VALOR_PRODUTO" />
+          <ScalarProperty Name="DS_PRODUTO" ColumnName="DS_PRODUTO" />
+          <ScalarProperty Name="HR_ENTREGA_PRODUTO" ColumnName="HR_ENTREGA_PRODUTO" />
+          <ScalarProperty Name="FL_VISIVEL" ColumnName="FL_VISIVEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CAD_TIPO_PRODUTO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_CAD_TIPO_PRODUTO">
+        <MappingFragment StoreEntitySet="TB_CAD_TIPO_PRODUTO">
+          <ScalarProperty Name="CD_TIPO_PRODUTO" ColumnName="CD_TIPO_PRODUTO" />
+          <ScalarProperty Name="NM_TIPO_PRODUTO" ColumnName="NM_TIPO_PRODUTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CAD_USUARIO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_CAD_USUARIO">
+        <MappingFragment StoreEntitySet="TB_CAD_USUARIO">
+          <ScalarProperty Name="CD_USUARIO" ColumnName="CD_USUARIO" />
+          <ScalarProperty Name="NM_USUARIO" ColumnName="NM_USUARIO" />
+          <ScalarProperty Name="DS_EMAIL" ColumnName="DS_EMAIL" />
+          <ScalarProperty Name="DS_SENHA" ColumnName="DS_SENHA" />
+          <ScalarProperty Name="FL_ATIVO" ColumnName="FL_ATIVO" />
+          <ScalarProperty Name="IMG_FOTO" ColumnName="IMG_FOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_END_BAIRRO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_END_BAIRRO">
+        <MappingFragment StoreEntitySet="TB_END_BAIRRO">
+          <ScalarProperty Name="CD_BAIRRO" ColumnName="CD_BAIRRO" />
+          <ScalarProperty Name="NM_BAIRRO" ColumnName="NM_BAIRRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_END_CIDADE">
+      <EntityTypeMapping TypeName="md_cerveja.TB_END_CIDADE">
+        <MappingFragment StoreEntitySet="TB_END_CIDADE">
+          <ScalarProperty Name="CD_CIDADE" ColumnName="CD_CIDADE" />
+          <ScalarProperty Name="CD_UF" ColumnName="CD_UF" />
+          <ScalarProperty Name="NM_CIDADE" ColumnName="NM_CIDADE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_END_ENDERECO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_END_ENDERECO">
+        <MappingFragment StoreEntitySet="TB_END_ENDERECO">
+          <ScalarProperty Name="CD_ENDERECO" ColumnName="CD_ENDERECO" />
+          <ScalarProperty Name="CD_USUARIO" ColumnName="CD_USUARIO" />
+          <ScalarProperty Name="CD_CIDADE" ColumnName="CD_CIDADE" />
+          <ScalarProperty Name="CD_UF" ColumnName="CD_UF" />
+          <ScalarProperty Name="CD_TIPO_ENDERECO" ColumnName="CD_TIPO_ENDERECO" />
+          <ScalarProperty Name="CD_BAIRRO" ColumnName="CD_BAIRRO" />
+          <ScalarProperty Name="FL_ENDERECO_PADRAO" ColumnName="FL_ENDERECO_PADRAO" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="DT_ATUALIZACAO" ColumnName="DT_ATUALIZACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_END_TIPO_ENDERECO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_END_TIPO_ENDERECO">
+        <MappingFragment StoreEntitySet="TB_END_TIPO_ENDERECO">
+          <ScalarProperty Name="CD_TIPO_ENDERECO" ColumnName="CD_TIPO_ENDERECO" />
+          <ScalarProperty Name="NM_TIPO_ENDERECO" ColumnName="NM_TIPO_ENDERECO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_END_UF">
+      <EntityTypeMapping TypeName="md_cerveja.TB_END_UF">
+        <MappingFragment StoreEntitySet="TB_END_UF">
+          <ScalarProperty Name="CD_UF" ColumnName="CD_UF" />
+          <ScalarProperty Name="NM_UF" ColumnName="NM_UF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PED_PEDIDO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_PED_PEDIDO">
+        <MappingFragment StoreEntitySet="TB_PED_PEDIDO">
+          <ScalarProperty Name="CD_PEDIDO" ColumnName="CD_PEDIDO" />
+          <ScalarProperty Name="CD_SITUACAO_PEDIDO" ColumnName="CD_SITUACAO_PEDIDO" />
+          <ScalarProperty Name="CD_USUARIO" ColumnName="CD_USUARIO" />
+          <ScalarProperty Name="NR_PEDIDO" ColumnName="NR_PEDIDO" />
+          <ScalarProperty Name="DT_PEDIDO" ColumnName="DT_PEDIDO" />
+          <ScalarProperty Name="VL_PEDIDO" ColumnName="VL_PEDIDO" />
+          <ScalarProperty Name="VL_VALOR_FRETE" ColumnName="VL_VALOR_FRETE" />
+          <ScalarProperty Name="VL_VALOR_TOTAL_PEDIDO" ColumnName="VL_VALOR_TOTAL_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PED_PEDIDO_PRODUTO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_PED_PEDIDO_PRODUTO">
+        <MappingFragment StoreEntitySet="TB_PED_PEDIDO_PRODUTO">
+          <ScalarProperty Name="CD_PEDIDO" ColumnName="CD_PEDIDO" />
+          <ScalarProperty Name="CD_PRODUTO" ColumnName="CD_PRODUTO" />
+          <ScalarProperty Name="QT_QUANTIDADE_PRODUTO" ColumnName="QT_QUANTIDADE_PRODUTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PED_SITUACAO_PEDIDO">
+      <EntityTypeMapping TypeName="md_cerveja.TB_PED_SITUACAO_PEDIDO">
+        <MappingFragment StoreEntitySet="TB_PED_SITUACAO_PEDIDO">
+          <ScalarProperty Name="CD_SITUACAO_PEDIDO" ColumnName="CD_SITUACAO_PEDIDO" />
+          <ScalarProperty Name="NM_SITUACAO_PEDIDO" ColumnName="NM_SITUACAO_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

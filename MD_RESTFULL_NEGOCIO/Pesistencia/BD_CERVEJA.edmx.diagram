@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5403dc9efe424422891da7cfff5dfb6c" Name="Diagram1">
+        <EntityTypeShape EntityType="CERVEJA_BD.sysdiagrams" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_CAD_COMENTARIO" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_CAD_DISTRIBUIDORA" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_CAD_PRODUTO" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_CAD_TIPO_PRODUTO" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_CAD_USUARIO" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_END_BAIRRO" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_END_CIDADE" Width="1.5" PointX="3.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_END_ENDERECO" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_END_TIPO_ENDERECO" Width="1.5" PointX="3.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_END_UF" Width="1.5" PointX="1.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_PED_PEDIDO" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_PED_PEDIDO_PRODUTO" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_PED_SITUACAO_PEDIDO" Width="1.5" PointX="3.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERVEJA_BD.TB_SEG_PERFIL" Width="1.5" PointX="3" PointY="26" IsExpanded="true" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_CAD_COMENTARIO_TB_CAD_COMENTARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_CAD_COMENTARIO_TB_CAD_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_CAD_COMENTARIO_TB_CAD_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_CAD_DISTRIBUIDORA_TB_CAD_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_CAD_PRODUTO_TB_CAD_TIPO_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_PED_PEDIDO_PRODUTO_TB_CAD_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_END_ENDERECO_TB_CAD_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_PED_PEDIDO_TB_CAD_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_END_ENDERECO_TB_END_BAIRRO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_BD_CAD_CIDADE_BD_CAD_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_END_ENDERECO_TB_END_CIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_END_ENDERECO_TB_END_TIPO_ENDERECO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_END_ENDERECO_TB_END_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_PED_PEDIDO_PRODUTO_TB_PED_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.FK_TB_PED_PEDIDO_TB_PED_SITUACAO_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="CERVEJA_BD.TB_SEG_USUARIO_PERFIL" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

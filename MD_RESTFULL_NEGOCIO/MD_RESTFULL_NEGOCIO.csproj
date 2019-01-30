@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6747D79D-A067-4A49-8E1E-93DE1CC484CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MD_RESTFULL_NEGOCIO</RootNamespace>
+    <AssemblyName>MD_RESTFULL_NEGOCIO</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Negocio\Autenticar_Usuario_NG.cs" />
+    <Compile Include="Pesistencia\BD_CERVEJA.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_CERVEJA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\BD_CERVEJA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\BD_CERVEJA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_CERVEJA.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\sysdiagrams.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_CAD_COMENTARIO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_CAD_DISTRIBUIDORA.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_CAD_PRODUTO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_CAD_TIPO_PRODUTO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_CAD_USUARIO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_END_BAIRRO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_END_CIDADE.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_END_ENDERECO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_END_TIPO_ENDERECO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_END_UF.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_PED_PEDIDO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_PED_PEDIDO_PRODUTO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_PED_SITUACAO_PEDIDO.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pesistencia\TB_SEG_PERFIL.cs">
+      <DependentUpon>BD_CERVEJA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="Pesistencia\BD_CERVEJA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BD_CERVEJA.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Pesistencia\BD_CERVEJA.edmx.diagram">
+      <DependentUpon>BD_CERVEJA.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Pesistencia\BD_CERVEJA.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD_CERVEJA.edmx</DependentUpon>
+      <LastGenOutput>BD_CERVEJA.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pesistencia\BD_CERVEJA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD_CERVEJA.edmx</DependentUpon>
+      <LastGenOutput>BD_CERVEJA.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

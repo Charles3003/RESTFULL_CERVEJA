@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CERVEJA_BD.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TB_CAD_COMENTARIO">
+    <Key>
+      <PropertyRef Name="CD_COMENTARIO" />
+    </Key>
+    <Property Name="CD_COMENTARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_COMENTARIO_PAI" Type="int" />
+    <Property Name="CD_USUARIO" Type="int" />
+    <Property Name="CD_PRODUTO" Type="int" Nullable="false" />
+    <Property Name="CD_DISTRIBUIDORA" Type="int" />
+    <Property Name="DS_COMENTARIO" Type="varchar" MaxLength="550" Nullable="false" />
+    <Property Name="DT_DATA_CRIACAO" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_CAD_DISTRIBUIDORA">
+    <Key>
+      <PropertyRef Name="CD_USUARIO" />
+    </Key>
+    <Property Name="CD_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NM_RAZAO_SOCIAL" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="NR_TELEFONE" Type="varchar" MaxLength="50" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="14" />
+    <Property Name="DT_DATA_HORA_INICIO_ENTREGA" Type="smalldatetime" Nullable="false" />
+    <Property Name="DT_DATA_HORA_FIM_ENTREGA" Type="smalldatetime" Nullable="false" />
+    <Property Name="DS_SAUDACAO" Type="varchar" MaxLength="250" />
+    <Property Name="VL_VALOR_ENTREGA_PEDIDO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IMG_LOGO_DISTRIBUIDORA" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TB_CAD_PRODUTO">
+    <Key>
+      <PropertyRef Name="CD_PRODUTO" />
+    </Key>
+    <Property Name="CD_PRODUTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_DISTRIBUIDORA" Type="int" Nullable="false" />
+    <Property Name="CD_TIPO_PRODUTO" Type="int" Nullable="false" />
+    <Property Name="NM_PRODUTO" Type="varchar" MaxLength="50" />
+    <Property Name="VL_VALOR_PRODUTO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DS_PRODUTO" Type="varchar" MaxLength="150" />
+    <Property Name="HR_ENTREGA_PRODUTO" Type="time" Precision="7" Nullable="false" />
+    <Property Name="FL_VISIVEL" Type="bit" />
+  </EntityType>
+  <EntityType Name="TB_CAD_TIPO_PRODUTO">
+    <Key>
+      <PropertyRef Name="CD_TIPO_PRODUTO" />
+    </Key>
+    <Property Name="CD_TIPO_PRODUTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NM_TIPO_PRODUTO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TB_CAD_USUARIO">
+    <Key>
+      <PropertyRef Name="CD_USUARIO" />
+    </Key>
+    <Property Name="CD_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_PERFIL" Type="smallint" />
+    <Property Name="NM_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DS_EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DS_SENHA" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FL_ATIVO" Type="bit" />
+    <Property Name="IMG_FOTO" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TB_END_BAIRRO">
+    <Key>
+      <PropertyRef Name="CD_BAIRRO" />
+    </Key>
+    <Property Name="CD_BAIRRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NM_BAIRRO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_END_CIDADE">
+    <Key>
+      <PropertyRef Name="CD_CIDADE" />
+    </Key>
+    <Property Name="CD_CIDADE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_UF" Type="smallint" Nullable="false" />
+    <Property Name="NM_CIDADE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_END_ENDERECO">
+    <Key>
+      <PropertyRef Name="CD_ENDERECO" />
+    </Key>
+    <Property Name="CD_ENDERECO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_USUARIO" Type="int" Nullable="false" />
+    <Property Name="CD_CIDADE" Type="int" Nullable="false" />
+    <Property Name="CD_UF" Type="smallint" Nullable="false" />
+    <Property Name="CD_TIPO_ENDERECO" Type="smallint" />
+    <Property Name="CD_BAIRRO" Type="int" />
+    <Property Name="FL_ENDERECO_PADRAO" Type="bit" />
+    <Property Name="ENDERECO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="COMPLEMENTO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CEP" Type="varchar" MaxLength="12" />
+    <Property Name="DT_ATUALIZACAO" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_END_TIPO_ENDERECO">
+    <Key>
+      <PropertyRef Name="CD_TIPO_ENDERECO" />
+    </Key>
+    <Property Name="CD_TIPO_ENDERECO" Type="smallint" Nullable="false" />
+    <Property Name="NM_TIPO_ENDERECO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_END_UF">
+    <Key>
+      <PropertyRef Name="CD_UF" />
+    </Key>
+    <Property Name="CD_UF" Type="smallint" Nullable="false" />
+    <Property Name="NM_UF" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_PED_PEDIDO">
+    <Key>
+      <PropertyRef Name="CD_PEDIDO" />
+    </Key>
+    <Property Name="CD_PEDIDO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CD_SITUACAO_PEDIDO" Type="smallint" Nullable="false" />
+    <Property Name="CD_USUARIO" Type="int" Nullable="false" />
+    <Property Name="NR_PEDIDO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DT_PEDIDO" Type="smalldatetime" Nullable="false" />
+    <Property Name="VL_PEDIDO" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VL_VALOR_FRETE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_VALOR_TOTAL_PEDIDO" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_PED_PEDIDO_PRODUTO">
+    <Key>
+      <PropertyRef Name="CD_PEDIDO" />
+      <PropertyRef Name="CD_PRODUTO" />
+    </Key>
+    <Property Name="CD_PEDIDO" Type="int" Nullable="false" />
+    <Property Name="CD_PRODUTO" Type="int" Nullable="false" />
+    <Property Name="QT_QUANTIDADE_PRODUTO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_PED_SITUACAO_PEDIDO">
+    <Key>
+      <PropertyRef Name="CD_SITUACAO_PEDIDO" />
+    </Key>
+    <Property Name="CD_SITUACAO_PEDIDO" Type="smallint" Nullable="false" />
+    <Property Name="NM_SITUACAO_PEDIDO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_SEG_PERFIL">
+    <Key>
+      <PropertyRef Name="CD_PERFIL" />
+    </Key>
+    <Property Name="CD_PERFIL" Type="smallint" Nullable="false" />
+    <Property Name="NM_PERFIL" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_SEG_USUARIO_PERFIL">
+    <Key>
+      <PropertyRef Name="CD_USUARIO" />
+      <PropertyRef Name="CD_PERFIL" />
+    </Key>
+    <Property Name="CD_USUARIO" Type="int" Nullable="false" />
+    <Property Name="CD_PERFIL" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BD_CAD_CIDADE_BD_CAD_UF">
+    <End Role="TB_END_UF" Type="Self.TB_END_UF" Multiplicity="1" />
+    <End Role="TB_END_CIDADE" Type="Self.TB_END_CIDADE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_END_UF">
+        <PropertyRef Name="CD_UF" />
+      </Principal>
+      <Dependent Role="TB_END_CIDADE">
+        <PropertyRef Name="CD_UF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CAD_COMENTARIO_TB_CAD_COMENTARIO">
+    <End Role="TB_CAD_COMENTARIO" Type="Self.TB_CAD_COMENTARIO" Multiplicity="0..1" />
+    <End Role="TB_CAD_COMENTARIO1" Type="Self.TB_CAD_COMENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_COMENTARIO">
+        <PropertyRef Name="CD_COMENTARIO" />
+      </Principal>
+      <Dependent Role="TB_CAD_COMENTARIO1">
+        <PropertyRef Name="CD_COMENTARIO_PAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CAD_COMENTARIO_TB_CAD_PRODUTO">
+    <End Role="TB_CAD_PRODUTO" Type="Self.TB_CAD_PRODUTO" Multiplicity="1" />
+    <End Role="TB_CAD_COMENTARIO" Type="Self.TB_CAD_COMENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_PRODUTO">
+        <PropertyRef Name="CD_PRODUTO" />
+      </Principal>
+      <Dependent Role="TB_CAD_COMENTARIO">
+        <PropertyRef Name="CD_PRODUTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CAD_COMENTARIO_TB_CAD_USUARIO">
+    <End Role="TB_CAD_USUARIO" Type="Self.TB_CAD_USUARIO" Multiplicity="1" />
+    <End Role="TB_CAD_COMENTARIO" Type="Self.TB_CAD_COMENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_USUARIO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_CAD_COMENTARIO">
+        <PropertyRef Name="CD_PRODUTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CAD_DISTRIBUIDORA_TB_CAD_USUARIO1">
+    <End Role="TB_CAD_USUARIO" Type="Self.TB_CAD_USUARIO" Multiplicity="1" />
+    <End Role="TB_CAD_DISTRIBUIDORA" Type="Self.TB_CAD_DISTRIBUIDORA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_USUARIO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_CAD_DISTRIBUIDORA">
+        <PropertyRef Name="CD_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CAD_PRODUTO_TB_CAD_TIPO_PRODUTO">
+    <End Role="TB_CAD_TIPO_PRODUTO" Type="Self.TB_CAD_TIPO_PRODUTO" Multiplicity="1" />
+    <End Role="TB_CAD_PRODUTO" Type="Self.TB_CAD_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_TIPO_PRODUTO">
+        <PropertyRef Name="CD_TIPO_PRODUTO" />
+      </Principal>
+      <Dependent Role="TB_CAD_PRODUTO">
+        <PropertyRef Name="CD_TIPO_PRODUTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_END_ENDERECO_TB_CAD_USUARIO">
+    <End Role="TB_CAD_USUARIO" Type="Self.TB_CAD_USUARIO" Multiplicity="1" />
+    <End Role="TB_END_ENDERECO" Type="Self.TB_END_ENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_USUARIO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_END_ENDERECO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_END_ENDERECO_TB_END_BAIRRO">
+    <End Role="TB_END_BAIRRO" Type="Self.TB_END_BAIRRO" Multiplicity="0..1" />
+    <End Role="TB_END_ENDERECO" Type="Self.TB_END_ENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_END_BAIRRO">
+        <PropertyRef Name="CD_BAIRRO" />
+      </Principal>
+      <Dependent Role="TB_END_ENDERECO">
+        <PropertyRef Name="CD_BAIRRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_END_ENDERECO_TB_END_CIDADE">
+    <End Role="TB_END_CIDADE" Type="Self.TB_END_CIDADE" Multiplicity="1" />
+    <End Role="TB_END_ENDERECO" Type="Self.TB_END_ENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_END_CIDADE">
+        <PropertyRef Name="CD_CIDADE" />
+      </Principal>
+      <Dependent Role="TB_END_ENDERECO">
+        <PropertyRef Name="CD_CIDADE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_END_ENDERECO_TB_END_TIPO_ENDERECO">
+    <End Role="TB_END_TIPO_ENDERECO" Type="Self.TB_END_TIPO_ENDERECO" Multiplicity="0..1" />
+    <End Role="TB_END_ENDERECO" Type="Self.TB_END_ENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_END_TIPO_ENDERECO">
+        <PropertyRef Name="CD_TIPO_ENDERECO" />
+      </Principal>
+      <Dependent Role="TB_END_ENDERECO">
+        <PropertyRef Name="CD_TIPO_ENDERECO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_END_ENDERECO_TB_END_UF">
+    <End Role="TB_END_UF" Type="Self.TB_END_UF" Multiplicity="1" />
+    <End Role="TB_END_ENDERECO" Type="Self.TB_END_ENDERECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_END_UF">
+        <PropertyRef Name="CD_UF" />
+      </Principal>
+      <Dependent Role="TB_END_ENDERECO">
+        <PropertyRef Name="CD_UF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PED_PEDIDO_PRODUTO_TB_CAD_PRODUTO">
+    <End Role="TB_CAD_PRODUTO" Type="Self.TB_CAD_PRODUTO" Multiplicity="1" />
+    <End Role="TB_PED_PEDIDO_PRODUTO" Type="Self.TB_PED_PEDIDO_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_PRODUTO">
+        <PropertyRef Name="CD_PRODUTO" />
+      </Principal>
+      <Dependent Role="TB_PED_PEDIDO_PRODUTO">
+        <PropertyRef Name="CD_PRODUTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PED_PEDIDO_PRODUTO_TB_PED_PEDIDO">
+    <End Role="TB_PED_PEDIDO" Type="Self.TB_PED_PEDIDO" Multiplicity="1" />
+    <End Role="TB_PED_PEDIDO_PRODUTO" Type="Self.TB_PED_PEDIDO_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PED_PEDIDO">
+        <PropertyRef Name="CD_PEDIDO" />
+      </Principal>
+      <Dependent Role="TB_PED_PEDIDO_PRODUTO">
+        <PropertyRef Name="CD_PEDIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PED_PEDIDO_TB_CAD_USUARIO">
+    <End Role="TB_CAD_USUARIO" Type="Self.TB_CAD_USUARIO" Multiplicity="1" />
+    <End Role="TB_PED_PEDIDO" Type="Self.TB_PED_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_USUARIO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PED_PEDIDO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PED_PEDIDO_TB_PED_SITUACAO_PEDIDO">
+    <End Role="TB_PED_SITUACAO_PEDIDO" Type="Self.TB_PED_SITUACAO_PEDIDO" Multiplicity="1" />
+    <End Role="TB_PED_PEDIDO" Type="Self.TB_PED_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PED_SITUACAO_PEDIDO">
+        <PropertyRef Name="CD_SITUACAO_PEDIDO" />
+      </Principal>
+      <Dependent Role="TB_PED_PEDIDO">
+        <PropertyRef Name="CD_SITUACAO_PEDIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_SEG_USUARIO_PERFIL_TB_CAD_USUARIO">
+    <End Role="TB_CAD_USUARIO" Type="Self.TB_CAD_USUARIO" Multiplicity="1" />
+    <End Role="TB_SEG_USUARIO_PERFIL" Type="Self.TB_SEG_USUARIO_PERFIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CAD_USUARIO">
+        <PropertyRef Name="CD_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_SEG_USUARIO_PERFIL">
+        <PropertyRef Name="CD_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_SEG_USUARIO_PERFIL_TB_SEG_PERFIL">
+    <End Role="TB_SEG_PERFIL" Type="Self.TB_SEG_PERFIL" Multiplicity="1" />
+    <End Role="TB_SEG_USUARIO_PERFIL" Type="Self.TB_SEG_USUARIO_PERFIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_SEG_PERFIL">
+        <PropertyRef Name="CD_PERFIL" />
+      </Principal>
+      <Dependent Role="TB_SEG_USUARIO_PERFIL">
+        <PropertyRef Name="CD_PERFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CERVEJA_BDStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CAD_COMENTARIO" EntityType="Self.TB_CAD_COMENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CAD_DISTRIBUIDORA" EntityType="Self.TB_CAD_DISTRIBUIDORA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CAD_PRODUTO" EntityType="Self.TB_CAD_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CAD_TIPO_PRODUTO" EntityType="Self.TB_CAD_TIPO_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CAD_USUARIO" EntityType="Self.TB_CAD_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_END_BAIRRO" EntityType="Self.TB_END_BAIRRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_END_CIDADE" EntityType="Self.TB_END_CIDADE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_END_ENDERECO" EntityType="Self.TB_END_ENDERECO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_END_TIPO_ENDERECO" EntityType="Self.TB_END_TIPO_ENDERECO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_END_UF" EntityType="Self.TB_END_UF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PED_PEDIDO" EntityType="Self.TB_PED_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PED_PEDIDO_PRODUTO" EntityType="Self.TB_PED_PEDIDO_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PED_SITUACAO_PEDIDO" EntityType="Self.TB_PED_SITUACAO_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_SEG_PERFIL" EntityType="Self.TB_SEG_PERFIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_SEG_USUARIO_PERFIL" EntityType="Self.TB_SEG_USUARIO_PERFIL" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BD_CAD_CIDADE_BD_CAD_UF" Association="Self.FK_BD_CAD_CIDADE_BD_CAD_UF">
+      <End Role="TB_END_UF" EntitySet="TB_END_UF" />
+      <End Role="TB_END_CIDADE" EntitySet="TB_END_CIDADE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CAD_COMENTARIO_TB_CAD_COMENTARIO" Association="Self.FK_TB_CAD_COMENTARIO_TB_CAD_COMENTARIO">
+      <End Role="TB_CAD_COMENTARIO" EntitySet="TB_CAD_COMENTARIO" />
+      <End Role="TB_CAD_COMENTARIO1" EntitySet="TB_CAD_COMENTARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CAD_COMENTARIO_TB_CAD_PRODUTO" Association="Self.FK_TB_CAD_COMENTARIO_TB_CAD_PRODUTO">
+      <End Role="TB_CAD_PRODUTO" EntitySet="TB_CAD_PRODUTO" />
+      <End Role="TB_CAD_COMENTARIO" EntitySet="TB_CAD_COMENTARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CAD_COMENTARIO_TB_CAD_USUARIO" Association="Self.FK_TB_CAD_COMENTARIO_TB_CAD_USUARIO">
+      <End Role="TB_CAD_USUARIO" EntitySet="TB_CAD_USUARIO" />
+      <End Role="TB_CAD_COMENTARIO" EntitySet="TB_CAD_COMENTARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CAD_DISTRIBUIDORA_TB_CAD_USUARIO1" Association="Self.FK_TB_CAD_DISTRIBUIDORA_TB_CAD_USUARIO1">
+      <End Role="TB_CAD_USUARIO" EntitySet="TB_CAD_USUARIO" />
+      <End Role="TB_CAD_DISTRIBUIDORA" EntitySet="TB_CAD_DISTRIBUIDORA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CAD_PRODUTO_TB_CAD_TIPO_PRODUTO" Association="Self.FK_TB_CAD_PRODUTO_TB_CAD_TIPO_PRODUTO">
+      <End Role="TB_CAD_TIPO_PRODUTO" EntitySet="TB_CAD_TIPO_PRODUTO" />
+      <End Role="TB_CAD_PRODUTO" EntitySet="TB_CAD_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_END_ENDERECO_TB_CAD_USUARIO" Association="Self.FK_TB_END_ENDERECO_TB_CAD_USUARIO">
+      <End Role="TB_CAD_USUARIO" EntitySet="TB_CAD_USUARIO" />
+      <End Role="TB_END_ENDERECO" EntitySet="TB_END_ENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_END_ENDERECO_TB_END_BAIRRO" Association="Self.FK_TB_END_ENDERECO_TB_END_BAIRRO">
+      <End Role="TB_END_BAIRRO" EntitySet="TB_END_BAIRRO" />
+      <End Role="TB_END_ENDERECO" EntitySet="TB_END_ENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_END_ENDERECO_TB_END_CIDADE" Association="Self.FK_TB_END_ENDERECO_TB_END_CIDADE">
+      <End Role="TB_END_CIDADE" EntitySet="TB_END_CIDADE" />
+      <End Role="TB_END_ENDERECO" EntitySet="TB_END_ENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_END_ENDERECO_TB_END_TIPO_ENDERECO" Association="Self.FK_TB_END_ENDERECO_TB_END_TIPO_ENDERECO">
+      <End Role="TB_END_TIPO_ENDERECO" EntitySet="TB_END_TIPO_ENDERECO" />
+      <End Role="TB_END_ENDERECO" EntitySet="TB_END_ENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_END_ENDERECO_TB_END_UF" Association="Self.FK_TB_END_ENDERECO_TB_END_UF">
+      <End Role="TB_END_UF" EntitySet="TB_END_UF" />
+      <End Role="TB_END_ENDERECO" EntitySet="TB_END_ENDERECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PED_PEDIDO_PRODUTO_TB_CAD_PRODUTO" Association="Self.FK_TB_PED_PEDIDO_PRODUTO_TB_CAD_PRODUTO">
+      <End Role="TB_CAD_PRODUTO" EntitySet="TB_CAD_PRODUTO" />
+      <End Role="TB_PED_PEDIDO_PRODUTO" EntitySet="TB_PED_PEDIDO_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PED_PEDIDO_PRODUTO_TB_PED_PEDIDO" Association="Self.FK_TB_PED_PEDIDO_PRODUTO_TB_PED_PEDIDO">
+      <End Role="TB_PED_PEDIDO" EntitySet="TB_PED_PEDIDO" />
+      <End Role="TB_PED_PEDIDO_PRODUTO" EntitySet="TB_PED_PEDIDO_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PED_PEDIDO_TB_CAD_USUARIO" Association="Self.FK_TB_PED_PEDIDO_TB_CAD_USUARIO">
+      <End Role="TB_CAD_USUARIO" EntitySet="TB_CAD_USUARIO" />
+      <End Role="TB_PED_PEDIDO" EntitySet="TB_PED_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PED_PEDIDO_TB_PED_SITUACAO_PEDIDO" Association="Self.FK_TB_PED_PEDIDO_TB_PED_SITUACAO_PEDIDO">
+      <End Role="TB_PED_SITUACAO_PEDIDO" EntitySet="TB_PED_SITUACAO_PEDIDO" />
+      <End Role="TB_PED_PEDIDO" EntitySet="TB_PED_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_SEG_USUARIO_PERFIL_TB_CAD_USUARIO" Association="Self.FK_TB_SEG_USUARIO_PERFIL_TB_CAD_USUARIO">
+      <End Role="TB_CAD_USUARIO" EntitySet="TB_CAD_USUARIO" />
+      <End Role="TB_SEG_USUARIO_PERFIL" EntitySet="TB_SEG_USUARIO_PERFIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_SEG_USUARIO_PERFIL_TB_SEG_PERFIL" Association="Self.FK_TB_SEG_USUARIO_PERFIL_TB_SEG_PERFIL">
+      <End Role="TB_SEG_PERFIL" EntitySet="TB_SEG_PERFIL" />
+      <End Role="TB_SEG_USUARIO_PERFIL" EntitySet="TB_SEG_USUARIO_PERFIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
